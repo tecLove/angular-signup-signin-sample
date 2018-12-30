@@ -1,0 +1,25 @@
+$bg-color: #fff;
+$border-color: #ccc;
+
+.web-login-container {
+  background-color: $bg-color;
+  border: 1px solid $border-color;
+  box-sizing: border-box;
+  min-width: 440px;
+  padding: 20px;
+}
+
+.form-bg {
+  background-image: url('../../../../assets/images/desktop-bg.jpg');
+  background-size: cover;
+}
+
+@media(max-width: 600px) {
+  .web-login-container {
+    background-color: $bg-color;
+    border: 1px solid $border-color;
+    box-sizing: border-box;
+    min-width: 340px;
+    padding: 20px;
+  }
+}

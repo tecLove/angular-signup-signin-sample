@@ -1,0 +1,17 @@
+<ng-container *ngIf="showLoader">
+      <div class="position-relative" id="progressLoader">
+        <div class="loader text-center rounded-0 position-absolute d-flex justify-content-center" [ngStyle]="{'height': contentHeight}">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center flex-column">
+              <div class="d-flex align-items-start flex-row">
+                <img src="../../../../assets/images/loader.gif">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</ng-container>
+
+<div #ngcontent class="ngcontent h-100">
+  <ng-content></ng-content>
+</div>

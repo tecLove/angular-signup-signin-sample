@@ -1,0 +1,37 @@
+$background-color: rgba(12, 12, 12, .3);
+$color: #f8f8ff;
+$rect-loader: #000;
+
+@mixin position {
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.loader {
+  background-color: $background-color;
+  left: -5px;
+  width: 102%;
+  z-index: 2;
+
+  img {
+    @include position;
+    height: 50px;
+    top: 50%;
+    width: 50px;
+  }
+
+  strong {
+    @include position;
+    color: $color;
+    font-size: large;
+    top: 60%;
+  }
+}
+
+.loader-rectangle {
+  background: $rect-loader;
+  border-radius: 10px;
+  height: 130px;
+  width: 130px;
+}

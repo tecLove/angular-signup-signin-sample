@@ -1,0 +1,44 @@
+<ng-container *ngIf="!registrationSuccess">
+<div class="d-flex flex-column">
+<div id="regTitle"><h4>User Registration</h4></div>
+<div><form [formGroup]="userRegistration" (ngSubmit)="onSubmit()" class="my-form" novalidate autocomplete="off">
+  <ng-container *ngFor="let field of uiFields">
+  <div class="form-group">
+    <mat-form-field [ngStyle]="{'width': '100%'}">
+      <input matInput [type]="field['type']" [placeholder]="field['placeholder']" [formControlName]="field['formControlName']" [pattern]="field['pattern']"
+             [errorStateMatcher]="matcher" [id]="field['formControlName']">
+      <mat-error *ngIf="form[field['formControlName']].hasError('pattern') && !form[field['formControlName']].hasError('required')">
+        {{ field['validation']['pattern'] }}
+      </mat-error>
+      <mat-error *ngIf="form[field['formControlName']].hasError('email') && !form[field['formControlName']].hasError('required')">
+        {{ field['validation']['email'] }}
+      </mat-error>
+      <mat-error *ngIf="form[field['formControlName']].hasError('required')">
+        {{ field['validation']['required'] }}
+      </mat-error>
+     </mat-form-field>
+    </div>
+   </ng-container>
+  <div class="form-group">
+    <button mat-button [disabled]="loading" class="float-left" (click)="cancelRegistration()" [tabIndex]="5" id="regCancelBtn">< Cancel</button>
+    <button mat-raised-button [disabled]="loading" class="float-right form-button" id="regSubmitBtn">Submit</button>
+  </div>
+</form>
+</div>
+</div>
+</ng-container>
+<ng-container *ngIf="registrationSuccess">
+  <div class="d-flex justify-content-center">
+    <div>
+      <mat-icon svgIcon="success-checkmark" class="mb-3" [ngStyle]="{'height.px': 44, 'width.px': 44}"></mat-icon>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <div id="regSuccessBody">
+      <p class="font-weight-normal">Registration is successful!</p>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center">
+    <button mat-raised-button class="form-button" (click)="cancelRegistration()" id="userRegSuccessBtn">OK</button>
+  </div>
+</ng-container>

@@ -1,0 +1,11 @@
+<ng-container *ngIf="userData$ | async">
+  <div class="d-flex justify-content-center">
+    <div class="d-flex flex-column">
+      <div class="text-center" id="userlistMssg"><p>You can Filter, Sort, Edit and Delete the entries of the table below</p></div>
+      <div>
+        <userportal-user-table [data]="userData$" [metaData]="userlistMetadata" [pageSize]="4"
+                             [sorting]="true" [filtering]="true" [actions]="true" (linkClicked)="linkClicked($event)" [loading]="loading" [isErrorMessage]="isErrorMessage"></userportal-user-table>
+      </div>
+    </div>
+  </div>
+</ng-container>

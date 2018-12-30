@@ -1,0 +1,27 @@
+<div class="d-flex flex-column" id="userLogin">
+  <div *ngIf="errorMessage"><p class="alert-danger" id="errorMssg">Invalid Username/ Password</p></div>
+<div id="loginFormTitle">
+  <span class="border-bottom border-dark">Login</span> | <a routerLink="registration">Sign Up</a>
+</div>
+<div>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate autocomplete="off">
+      <ng-container *ngFor="let   field of uiFields">
+        <div class="form-group">
+          <mat-form-field [ngStyle]="{'width': '100%'}">
+            <ng-container>
+              <input matInput [placeholder]="field['placeholder']" [type]="field['type']" [formControlName]="field['formControlName']" [pattern]="field['pattern']"
+                     [errorStateMatcher]="matcher" [id]="field['formControlName']">
+            </ng-container>
+            <mat-error *ngIf="form[field['formControlName']].hasError('required')">
+              {{ field['validation']['required'] }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </ng-container>
+  <div class="form-group">
+    <button type="submit" mat-raised-button [disabled]="loading" class="form-button btn-block" [disabled]="form.invalid" id="loginSubmitBtn">Submit</button>
+  </div>
+</form>
+</div>
+</div>
+

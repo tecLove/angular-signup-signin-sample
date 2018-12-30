@@ -1,0 +1,12 @@
+$border-right-color: #0091ea;
+
+.active-link {
+  border-right: 1px solid $border-right-color;
+  border-right-width: 2px;
+  color: $border-right-color;
+}
+
+.side-nav-link {
+  border-radius: 0;
+  width: 100%;
+}

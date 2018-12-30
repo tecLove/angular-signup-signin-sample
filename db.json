@@ -1,0 +1,28 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Julius",
+      "last_name": "Cosasdfg",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+    },
+    {
+      "id": 2,
+      "first_name": "Stuart",
+      "last_name": "Little",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+    },
+    {
+      "id": 3,
+      "first_name": "Roger",
+      "last_name": "Fed",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg"
+    },
+    {
+      "first_name": "Rghsfjd",
+      "last_name": "Ujksdfjl",
+      "avatar": "https://s3.amazonaws.com/uifaces/faces/twitter/marcoramires/128.jpg",
+      "id": 4
+    }
+  ]
+}

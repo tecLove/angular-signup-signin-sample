@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+//You can add global styles to this file, and also import other style files
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../themes/scss/angular-material-theme';
+$bg-color: #43a047;
+$color: #fff;
+
+html,
+body {
+  height: 100%;
+}
+
+body { font-family: 'Times New Roman', 'Helvetica Neue', sans-serif; margin: 0; }
+
+.form-button {
+  background: $bg-color;
+  color: $color;
+}
+
