@@ -12,7 +12,7 @@ import { MaterialDesignModule } from '../../material-design/material-design.modu
 
 import { UserTableComponent } from './user-table.component';
 
-fdescribe('UserTableComponent', () => {
+describe('UserTableComponent', () => {
   let component: UserTableComponent;
   let fixture: ComponentFixture<UserTableComponent>;
   let eventSpy: Spy;
@@ -161,15 +161,6 @@ fdescribe('UserTableComponent', () => {
   });
   it('should check table filter placeholder', () => {
     const ele = findSelector('#tableFilter').getAttribute('placeholder');
-    expect(ele).toEqual(userMetadata.filter.placeholder);
-  });
-  it('should check table columns headers', () => {
-    component.displayedColumns = ['avatar', 'firstname', 'lastname', 'actions'];
-    component.metaData = userMetadata;
-    component.dataSource.data = [{ firstname: 'test' }];
-    fixture.detectChanges();
-    const ele = fixture.debugElement.query(By.css('#userTable')).children[0]
-    // const ele = findSelector('#avatar').textContent;
     expect(ele).toEqual(userMetadata.filter.placeholder);
   });
 });
